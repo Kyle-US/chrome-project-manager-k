@@ -2,20 +2,35 @@
 <html>
 <head>
     <title>Project Manager</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="page.js"></script>
 </head>
 <body>
-
-    <section>
-        <div class="container">
-            <div class="text-box">
-                <h1>The Project Manager</h1>
-                <p>
-                    Creating a project manager using a chrome extension
-                </p>
-            </div>
+<section>
+    <div class="container">
+        <div class="text-box">
+            <h1>US Project Manager</h1>
+            <p>
+                Creating a project manager using a chrome extension
+            </p>
         </div>
-    </section>
+    </div>
+</section>
+<section>
+    <div class="container">
 
+        <form class="task-form">
+            <label>Task</label>
+            <input name="name" type="text">
+            <input name="deadline" type="date">
+            <button type="submit" class="btn-submit-task">Save</button>
+        </form>
+
+        <ul class="task-list">
+
+        </ul>
+
+    </div>
+</section>
 </body>
 </html>
