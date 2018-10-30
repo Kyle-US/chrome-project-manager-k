@@ -59,6 +59,16 @@
             });
 
 
+        // Clear Tasks
+
+            function clearTaskList(){
+                storage.set({'tasks':[]},function(){
+                    refresh_tasks_list();
+                });
+            }
+            $('.btn-clear-tasks').on('click',function(){
+                clearTaskList()
+            })
 
 
     })
