@@ -1,7 +1,7 @@
 (function($){
     $(document).ready(function(){
 
-            var storage = chrome.storage.sync;
+        var storage = chrome.storage.sync;
 
 
         // Refresh Tasks List
@@ -22,7 +22,25 @@
             refresh_tasks_list();
 
 
-        // Save Task
+
+        // Set Task
+
+            var setTask = function(new_task){
+
+                storage.get(['tasks'],function(result){
+
+                    var count = result.tasks.length;
+                    result.tasks[count] = new_task;
+
+                    storage.set({'tasks':result.tasks},function(){
+                        refresh_tasks_list();
+                    });
+                });
+            };
+
+
+
+        // New Task Input
 
             $('.task-form').on('submit',function(e){e.preventDefault();
 
@@ -30,26 +48,17 @@
                 var deadline = $(this).find('input[name=deadline]').val();
 
                 if(
-                    name.length
-                &&  deadline.length
+                        name.length
+                    &&  deadline.length
                 ){
-                    storage.get(['tasks'],function(result){
-
-                        var save_data = {
-                            task: name,
-                            deadline: deadline
-                        };
-
-                        var count = result.tasks.length;
-                        result.tasks[count] = save_data;
-
-                        storage.set({'tasks':result.tasks},function(){
-                            refresh_tasks_list();
-                        });
-
+                    setTask({
+                        task: name,
+                        deadline: deadline
                     });
                 }
-            })
+            });
+
+
 
 
     })
