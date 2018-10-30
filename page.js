@@ -4,7 +4,6 @@
         var storage = chrome.storage.sync;
 
 
-
         // Refresh Tasks List
 
             function refresh_tasks_list(){
@@ -14,7 +13,7 @@
                     $('ul.task-list').empty();
 
                     if(result.tasks.length){
-                        result.tasks.forEach(function(task,ind){console.log(task)
+                        result.tasks.forEach(function(task,ind){
                             var li = '<li class="item" data-index="'+ind+'"><span>'+task.name+'</span><button class="btn-remove">X</button></li>';
                             $('ul.task-list').append($(li))
                         });
@@ -28,7 +27,6 @@
             refresh_tasks_list();
 
 
-
         // Set Task
 
             var setTask = function(new_task){
@@ -40,7 +38,6 @@
                     });
                 });
             };
-
 
 
         // New Task Input
