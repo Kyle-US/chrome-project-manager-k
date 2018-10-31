@@ -1,7 +1,21 @@
 (function($){
     $(document).ready(function(){
 
-        var storage = chrome.storage.sync;
+
+        // Setup Tasks Storage
+
+            var storage = chrome.storage.sync;
+
+            storage.get(['tasks'],function(result){
+                if($.isEmptyObject(result)){
+                    storage.set({'tasks':[]},function(){
+                        refresh_tasks_list();
+                    });
+                }else{
+                    refresh_tasks_list();
+                }
+            });
+
 
 
         // Refresh Tasks List
@@ -24,7 +38,7 @@
                     }
                 });
             }
-            refresh_tasks_list();
+
 
 
         // Set Task
@@ -85,4 +99,3 @@
 
     })
 }(jQuery));
-
