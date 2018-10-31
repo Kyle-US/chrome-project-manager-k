@@ -61,6 +61,7 @@
 
                             var task_index = $(this).closest('.task').attr('data-index');
                             var priority = $(this).attr('data-priority');
+                            update_task(task_index,'priority',priority);
                         })
                     }
                 });
@@ -80,6 +81,23 @@
             };
 
 
+        // update
+
+            function update_task(ind,key,val){
+
+                storage.get(['tasks'],function(result){
+
+                    result.tasks[ind][key] = val;
+
+                    console.log(result);
+
+                    storage.set({'tasks':result.tasks},function(){
+                        refresh_tasks_list();
+                    });
+                });
+            }
+
+            
         // Submit New Task
 
             $('.task-form').on('submit',function(e){
