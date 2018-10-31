@@ -38,8 +38,11 @@
                             $('ul.task-list').append($task)
                         });
                         $('ul.task-list .btn-remove').off().on('click',function(){
-                            var index = parseInt($(this).closest('.task').attr('data-index'));
-                            removeTask(index);
+                            var r = confirm("Delete this task forever?");
+                            if(r){
+                                var index = parseInt($(this).closest('.task').attr('data-index'));
+                                removeTask(index);
+                            }
                         })
                     }
                 });
@@ -105,6 +108,7 @@
                     refresh_tasks_list();
                 });
             }
+
             $('.btn-clear-tasks').on('click',function(){
                 clearTaskList()
             })
