@@ -11,15 +11,36 @@ $red: #ff4242;
 
 .btn-add-task{
   background: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
 }
 
 .task-form{
   display: none;
+  padding: 20px 10px;
+  width: 100%;
 
-  &.active{
-    display: block;
+  input{
+    margin-bottom: 10px;
+    font-size: 18px;
+    border: none;
+    border-bottom: solid 2px #fff;
+    padding: 5px 10px;
+    background: none;
+    color: #fff;
+    outline: none;
   }
 
+  .btn-submit-task{
+    margin-top: 10px;
+    background: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+  }
+
+  &.active{
+    display: inline-block;
+  }
 }
 
 ul.task-list{
@@ -35,6 +56,7 @@ ul.task-list{
     padding: 10px 20px;
     margin: 6px 0;
     cursor: default;
+    border-radius: 100px;
 
     .priority{
       display: inline-block;
@@ -67,7 +89,20 @@ ul.task-list{
         font-size: 12px;
       }
 
+      .priority-colors{
+        margin: 0 20px;
+        display: inline-block;
+        @extend .ease;
+        opacity: 0;
+
+        label{
+          height: 10px;
+        }
+      }
+
       .btn-remove{
+        display: inline-block;
+        color: $red;
         background: none;
         @extend .ease;
         opacity: 0;
@@ -75,12 +110,19 @@ ul.task-list{
     }
 
     &:hover{
-      background: #141414;
+      background: #2f2f2f;
+
+      .priority-colors{
+        opacity: 1;
+      }
 
       .btn-remove{
-        color: $red;
         opacity: 1;
       }
     }
   }
+}
+
+.btn-clear-tasks{
+  background: none;
 }

@@ -14,10 +14,7 @@
 <section>
     <div class="container">
         <div class="text-box">
-            <h1>Tasks</h1>
-            <p>
-                Creating a project manager using a chrome extension
-            </p>
+            <h2>Tasks</h2>
         </div>
     </div>
 </section>
@@ -27,15 +24,17 @@
         <button class="btn-add-task">New Task</button>
         <form class="task-form">
             <label>Task Name</label>
-            <input name="name" type="text">
-            <input name="deadline" type="date">
+            <input name="name" type="text"><br>
+            <label>Due <small>(optional)</small>:</label>
+            <input name="deadline" type="date"><br>
 
+            <label>Color:</label>
             <div class="priority-colors">
-                <input id="priority_1" type="radio" name="priority" value="1" checked><label for="priority_1"></label>
-                <input id="priority_2" type="radio" name="priority" value="2"><label for="priority_2"></label>
-                <input id="priority_3" type="radio" name="priority" value="3"><label for="priority_3"></label>
-                <input id="priority_4" type="radio" name="priority" value="4"><label for="priority_4"></label>
-                <input id="priority_5" type="radio" name="priority" value="5"><label for="priority_5"></label>
+                <input id="priority_1" type="radio" name="priority" value="1" checked><label class="color-1" for="priority_1"></label>
+                <input id="priority_2" type="radio" name="priority" value="2"><label class="color-2" for="priority_2"></label>
+                <input id="priority_3" type="radio" name="priority" value="3"><label class="color-3" for="priority_3"></label>
+                <input id="priority_4" type="radio" name="priority" value="4"><label class="color-4" for="priority_4"></label>
+                <input id="priority_5" type="radio" name="priority" value="5"><label class="color-5" for="priority_5"></label>
             </div>
 
             <button type="submit" class="btn-submit-task">Save</button>
@@ -43,7 +42,7 @@
 
         <ul class="task-list"></ul>
 
-        <button class="btn-clear-tasks">x delete all</button>
+        <button class="btn-clear-tasks">&#x2718; delete all</button>
 
     </div>
 </section>

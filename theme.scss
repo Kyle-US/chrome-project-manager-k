@@ -49,22 +49,22 @@ button{
     display: inline-block;
     border-radius: 100px;
     border: solid 2px rgba(0,0,0,0);
+    margin: 0 3px;
 
-    &[for=priority_1]{
+    &.color-1{
       background: #17d624;
     }
-    &[for=priority_2]{
+    &.color-2{
       background: #189faf;
     }
-    &[for=priority_3]{
+    &.color-3{
       background: #ded700;
     }
-    &[for=priority_4]{
+    &.color-4{
       background: #dd6e00;
     }
-    &[for=priority_5]{
+    &.color-5{
       background: #e53e3b;
     }
   }
-
 }

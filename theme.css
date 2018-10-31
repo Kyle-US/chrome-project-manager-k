@@ -32,16 +32,17 @@ button {
   height: 30px;
   display: inline-block;
   border-radius: 100px;
-  border: solid 2px rgba(0, 0, 0, 0); }
-  .priority-colors label[for=priority_1] {
+  border: solid 2px rgba(0, 0, 0, 0);
+  margin: 0 3px; }
+  .priority-colors label.color-1 {
     background: #17d624; }
-  .priority-colors label[for=priority_2] {
+  .priority-colors label.color-2 {
     background: #189faf; }
-  .priority-colors label[for=priority_3] {
+  .priority-colors label.color-3 {
     background: #ded700; }
-  .priority-colors label[for=priority_4] {
+  .priority-colors label.color-4 {
     background: #dd6e00; }
-  .priority-colors label[for=priority_5] {
+  .priority-colors label.color-5 {
     background: #e53e3b; }
 
 /*# sourceMappingURL=theme.css.map */
