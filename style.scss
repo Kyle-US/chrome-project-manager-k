@@ -25,22 +25,21 @@ $red: #ff4242;
 ul.task-list{
   width: 100%;
   max-width: 700px;
-  background: #444;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
 
   li.task{
     @extend .ease;
     list-style: none;
-    background: #2a3a47;
+    background: #46434a;
     padding: 10px 20px;
-    margin: 3px 0;
+    margin: 6px 0;
     cursor: default;
-
 
     .priority{
       display: inline-block;
       border: solid 1px #fff;
-      width: 12px;
+      width: 24px;
       height: 12px;
       border-radius: 100px;
       margin-right: 10px;
@@ -62,7 +61,8 @@ ul.task-list{
       div.deadline{
         display: inline-block;
         margin-left: 10px;
-        background: #00564b;
+        background: #656565;
+        border-radius: 30px;
         padding: 3px 12px;
         font-size: 12px;
       }
