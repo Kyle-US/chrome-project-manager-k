@@ -97,7 +97,7 @@
                 });
             }
 
-            
+
         // Submit New Task
 
             $('.task-form').on('submit',function(e){
@@ -145,10 +145,11 @@
             }
 
 
-        // Show New Task Form
+        // Show 'New Task' Form
 
             $('.btn-add-task').on('click',function(){
                 $('.task-form').addClass('active')
+                $('.task-form').find('[name=name]').focus();
             });
 
 

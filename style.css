@@ -31,8 +31,6 @@
     display: inline-block; }
 
 ul.task-list {
-  width: 100%;
-  max-width: 700px;
   margin: 0;
   padding: 0; }
   ul.task-list li.task {
