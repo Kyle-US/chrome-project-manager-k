@@ -1,25 +1,6 @@
 .ease, ul.task-list li.task, ul.task-list li.task .btn-remove {
   transition: all 300ms ease; }
 
-body {
-  background: #1c1c1c;
-  color: #fff; }
-
-h1 {
-  font-size: 60px; }
-
-h2 {
-  font-size: 40px; }
-
-h3 {
-  font-size: 30px; }
-
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  outline: none; }
-
 .btn-clear-tasks {
   color: #ff4242; }
 
@@ -32,11 +13,15 @@ button {
     display: block; }
 
 ul.task-list {
+  width: 100%;
+  max-width: 700px;
   background: #444;
-  padding: 30px; }
+  padding: 20px; }
   ul.task-list li.task {
+    list-style: none;
     background: #2a3a47;
-    padding: 10px 20px;
+    padding: 0 20px;
+    margin: 3px 0;
     cursor: default; }
     ul.task-list li.task div.name {
       display: inline-block;
@@ -45,6 +30,7 @@ ul.task-list {
       display: inline-block;
       padding: 10px; }
     ul.task-list li.task .btn-remove {
+      background: none;
       opacity: 0; }
     ul.task-list li.task:hover {
       background: #000000; }

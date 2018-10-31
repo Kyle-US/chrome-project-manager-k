@@ -1,0 +1,23 @@
+body {
+  background: #1c1c1c;
+  color: #fff; }
+
+div {
+  font-size: 16px; }
+
+h1 {
+  font-size: 60px; }
+
+h2 {
+  font-size: 40px; }
+
+h3 {
+  font-size: 30px; }
+
+button {
+  cursor: pointer;
+  border: none;
+  background: #fff;
+  outline: none; }
+
+/*# sourceMappingURL=theme.css.map */

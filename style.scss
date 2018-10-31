@@ -1,5 +1,9 @@
 
-@import 'theme';
+$red: #ff4242;
+
+.ease{
+  transition: all 300ms ease;
+}
 
 .btn-clear-tasks{
   color: $red;
@@ -18,13 +22,17 @@
 }
 
 ul.task-list{
+  width: 100%;
+  max-width: 700px;
   background: #444;
-  padding: 30px;
+  padding: 20px;
 
   li.task{
     @extend .ease;
+    list-style: none;
     background: #2a3a47;
-    padding: 10px 20px;
+    padding: 0 20px;
+    margin: 3px 0;
     cursor: default;
 
     div.name{
@@ -38,6 +46,7 @@ ul.task-list{
     }
 
     .btn-remove{
+      background: none;
       @extend .ease;
       opacity: 0;
     }
