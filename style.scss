@@ -19,6 +19,7 @@ $red: #ff4242;
   &.active{
     display: block;
   }
+
 }
 
 ul.task-list{
@@ -31,28 +32,50 @@ ul.task-list{
     @extend .ease;
     list-style: none;
     background: #2a3a47;
-    padding: 0 20px;
+    padding: 10px 20px;
     margin: 3px 0;
     cursor: default;
 
-    div.name{
+
+    .priority{
       display: inline-block;
-      padding: 10px;
+      border: solid 1px #fff;
+      width: 12px;
+      height: 12px;
+      border-radius: 100px;
+      margin-right: 10px;
+
+      &.priority-1{background: #17d624}
+      &.priority-2{background: #189faf}
+      &.priority-3{background: #ded700}
+      &.priority-4{background: #dd6e00}
+      &.priority-5{background: #e53e3b}
     }
 
-    div.deadline{
+    .details{
       display: inline-block;
-      padding: 10px;
-    }
 
-    .btn-remove{
-      background: none;
-      @extend .ease;
-      opacity: 0;
+      div.name{
+        display: inline-block;
+      }
+
+      div.deadline{
+        display: inline-block;
+        margin-left: 10px;
+        background: #00564b;
+        padding: 3px 12px;
+        font-size: 12px;
+      }
+
+      .btn-remove{
+        background: none;
+        @extend .ease;
+        opacity: 0;
+      }
     }
 
     &:hover{
-      background: #000000;
+      background: #141414;
 
       .btn-remove{
         color: $red;

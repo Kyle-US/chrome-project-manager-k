@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 body {
   background: #1c1c1c;
   color: #fff; }
@@ -19,5 +22,26 @@ button {
   border: none;
   background: #fff;
   outline: none; }
+
+.priority-colors input {
+  display: none; }
+  .priority-colors input:checked + label {
+    border: solid 2px #f3faff; }
+.priority-colors label {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  border-radius: 100px;
+  border: solid 2px rgba(0, 0, 0, 0); }
+  .priority-colors label[for=priority_1] {
+    background: #17d624; }
+  .priority-colors label[for=priority_2] {
+    background: #189faf; }
+  .priority-colors label[for=priority_3] {
+    background: #ded700; }
+  .priority-colors label[for=priority_4] {
+    background: #dd6e00; }
+  .priority-colors label[for=priority_5] {
+    background: #e53e3b; }
 
 /*# sourceMappingURL=theme.css.map */

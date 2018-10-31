@@ -29,13 +29,15 @@
             <label>Task Name</label>
             <input name="name" type="text">
             <input name="deadline" type="date">
-            <select name="priority">
-                <option value="Crutial">Crutial</option>
-                <option value="High">High</option>
-                <option value="Medium" selected>Medium</option>
-                <option value="Low">Low</option>
-                <option value="Meh">Meh</option>
-            </select>
+
+            <div class="priority-colors">
+                <input id="priority_1" type="radio" name="priority" value="1" checked><label for="priority_1"></label>
+                <input id="priority_2" type="radio" name="priority" value="2"><label for="priority_2"></label>
+                <input id="priority_3" type="radio" name="priority" value="3"><label for="priority_3"></label>
+                <input id="priority_4" type="radio" name="priority" value="4"><label for="priority_4"></label>
+                <input id="priority_5" type="radio" name="priority" value="5"><label for="priority_5"></label>
+            </div>
+
             <button type="submit" class="btn-submit-task">Save</button>
         </form>
 
