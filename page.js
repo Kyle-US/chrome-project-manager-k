@@ -17,7 +17,6 @@
             });
 
 
-
         // Refresh Tasks List
 
             function refresh_tasks_list(){
@@ -28,17 +27,23 @@
 
                     if(result.tasks.length){
                         result.tasks.forEach(function(task,ind){
-                            var li = '<li class="item" data-index="'+ind+'"><span>'+task.name+'</span><button class="btn-remove">X</button></li>';
-                            $('ul.task-list').append($(li))
+
+                            var $li = $('<li class="task" data-index="'+ind+'"></li>');
+                            var $name = $('<div class="name">'+task.name+'</div>');
+                            var deadline = task.deadline === 'unset' ? '' : '<div class="deadline">'+task.deadline+'</div>';
+                            var $deadline = $(deadline);
+                            var $close_btn = $('<button class="btn-remove">delete</button>');
+                            var $task = $li.append($name,$deadline,$close_btn);
+
+                            $('ul.task-list').append($task)
                         });
                         $('ul.task-list .btn-remove').off().on('click',function(){
-                            var index = parseInt($(this).closest('.item').attr('data-index'));
+                            var index = parseInt($(this).closest('.task').attr('data-index'));
                             removeTask(index);
                         })
                     }
                 });
             }
-
 
 
         // Set Task
@@ -56,10 +61,18 @@
 
         // New Task Input
 
-            $('.task-form').on('submit',function(e){e.preventDefault();
+            $('.task-form').on('submit',function(e){
+                e.preventDefault();
 
-                var name = $(this).find('input[name=name]').val();
-                var deadline = $(this).find('input[name=deadline]').val();
+                var $name = $(this).find('input[name=name]');
+                var $deadline = $(this).find('input[name=deadline]');
+
+                var name = $name.val();
+                var deadline = $deadline.val();
+                deadline = deadline ? deadline : 'unset';
+
+                $name.val('');
+                $deadline.val('');
 
                 if(
                         name.length

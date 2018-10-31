@@ -1,0 +1,68 @@
+.ease{
+  transition: all 300ms ease;
+}
+
+$red: #ff4242;
+
+html{}
+
+body{
+  background: #1c1c1c;
+  color: #fff;
+}
+
+h1{
+  font-size: 60px;
+}
+h2{
+  font-size: 40px;
+}
+h3{
+  font-size: 30px;
+}
+
+button{
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.btn-clear-tasks{
+  color: $red;
+}
+
+ul.task-list{
+  background: #444;
+  padding: 30px;
+
+  li.task{
+    @extend .ease;
+    background: #2a3a47;
+    padding: 10px 20px;
+    cursor: default;
+
+    div.name{
+      display: inline-block;
+      padding: 10px;
+    }
+
+    div.deadline{
+      display: inline-block;
+      padding: 10px;
+    }
+
+    .btn-remove{
+      display: none;
+    }
+
+    &:hover{
+      background: #000000;
+
+      .btn-remove{
+        color: $red;
+        display: inline-block;
+      }
+    }
+  }
+}

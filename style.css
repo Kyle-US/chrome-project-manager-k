@@ -1,0 +1,47 @@
+.ease, ul.task-list li.task {
+  transition: all 300ms ease; }
+
+body {
+  background: #1c1c1c;
+  color: #fff; }
+
+h1 {
+  font-size: 60px; }
+
+h2 {
+  font-size: 40px; }
+
+h3 {
+  font-size: 30px; }
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none; }
+
+.btn-clear-tasks {
+  color: #ff4242; }
+
+ul.task-list {
+  background: #444;
+  padding: 30px; }
+  ul.task-list li.task {
+    background: #2a3a47;
+    padding: 10px 20px;
+    cursor: default; }
+    ul.task-list li.task div.name {
+      display: inline-block;
+      padding: 10px; }
+    ul.task-list li.task div.deadline {
+      display: inline-block;
+      padding: 10px; }
+    ul.task-list li.task .btn-remove {
+      display: none; }
+    ul.task-list li.task:hover {
+      background: #000000; }
+      ul.task-list li.task:hover .btn-remove {
+        color: #ff4242;
+        display: inline-block; }
+
+/*# sourceMappingURL=style.css.map */
