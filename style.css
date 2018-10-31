@@ -1,4 +1,4 @@
-.ease, ul.task-list li.task {
+.ease, ul.task-list li.task, ul.task-list li.task .btn-remove {
   transition: all 300ms ease; }
 
 body {
@@ -23,6 +23,14 @@ button {
 .btn-clear-tasks {
   color: #ff4242; }
 
+.btn-add-task {
+  background: #fff; }
+
+.task-form {
+  display: none; }
+  .task-form.active {
+    display: block; }
+
 ul.task-list {
   background: #444;
   padding: 30px; }
@@ -37,11 +45,11 @@ ul.task-list {
       display: inline-block;
       padding: 10px; }
     ul.task-list li.task .btn-remove {
-      display: none; }
+      opacity: 0; }
     ul.task-list li.task:hover {
       background: #000000; }
       ul.task-list li.task:hover .btn-remove {
         color: #ff4242;
-        display: inline-block; }
+        opacity: 1; }
 
 /*# sourceMappingURL=style.css.map */

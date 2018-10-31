@@ -6,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="page.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="theme.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
 </head>
@@ -23,10 +24,18 @@
 <section>
     <div class="container">
 
+        <button class="btn-add-task">New Task</button>
         <form class="task-form">
-            <label>Task</label>
+            <label>Task Name</label>
             <input name="name" type="text">
             <input name="deadline" type="date">
+            <select name="priority">
+                <option value="Crutial">Crutial</option>
+                <option value="High">High</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Low">Low</option>
+                <option value="Meh">Meh</option>
+            </select>
             <button type="submit" class="btn-submit-task">Save</button>
         </form>
 

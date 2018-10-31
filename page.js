@@ -62,13 +62,14 @@
             };
 
 
-        // New Task Input
+        // Submit New Task
 
             $('.task-form').on('submit',function(e){
                 e.preventDefault();
 
                 var $name = $(this).find('input[name=name]');
                 var $deadline = $(this).find('input[name=deadline]');
+                var $priority = $(this).find('input[name=priority]');
 
                 var name = $name.val();
                 var deadline = $deadline.val();
@@ -76,11 +77,13 @@
 
                 $name.val('');
                 $deadline.val('');
+                $priority.val('');
 
                 if(
                         name.length
                     &&  deadline.length
                 ){
+                    $('.task-form').removeClass('active')
                     setTask({
                         name: name,
                         deadline: deadline
@@ -101,6 +104,14 @@
             }
 
 
+        // Show New Task Form
+
+            $('.btn-add-task').on('click',function(){
+                $('.task-form').addClass('active')
+            });
+
+
+
         // Clear all tasks
 
             function clearTaskList(){
@@ -110,7 +121,10 @@
             }
 
             $('.btn-clear-tasks').on('click',function(){
-                clearTaskList()
+                var r = confirm("Delete all tasks forever?");
+                if(r){
+                    clearTaskList()
+                }
             })
 
 

@@ -1,35 +1,20 @@
-.ease{
-  transition: all 300ms ease;
-}
 
-$red: #ff4242;
-
-html{}
-
-body{
-  background: #1c1c1c;
-  color: #fff;
-}
-
-h1{
-  font-size: 60px;
-}
-h2{
-  font-size: 40px;
-}
-h3{
-  font-size: 30px;
-}
-
-button{
-  cursor: pointer;
-  border: none;
-  background: none;
-  outline: none;
-}
+@import 'theme';
 
 .btn-clear-tasks{
   color: $red;
+}
+
+.btn-add-task{
+  background: #fff;
+}
+
+.task-form{
+  display: none;
+
+  &.active{
+    display: block;
+  }
 }
 
 ul.task-list{
@@ -53,7 +38,8 @@ ul.task-list{
     }
 
     .btn-remove{
-      display: none;
+      @extend .ease;
+      opacity: 0;
     }
 
     &:hover{
@@ -61,7 +47,7 @@ ul.task-list{
 
       .btn-remove{
         color: $red;
-        display: inline-block;
+        opacity: 1;
       }
     }
   }
