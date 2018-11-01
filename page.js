@@ -33,14 +33,11 @@
                         var ordered_tasks_arr = [];
 
                         priorities.forEach(function(p){
-
                             result.tasks.forEach(function(task,ind){
-
                                 if(p == task.priority){
                                     ordered_tasks_arr.push(task);
                                 }
                             })
-
                         });
 
                         var tasks = ordered_tasks_arr;
@@ -94,7 +91,7 @@
                                     // Archived tasks
 
                                     $li = $('<li class="task archived" data-index="'+ind+'"></li>');
-                                    $name = $('<div class="name">'+task.name+' &#10004;</div>');
+                                    $name = $('<div class="name">&#10004; '+task.name+'</div>');
                                     $delete_btn = $('<button class="btn-remove">&#x2718; delete</button>');
                                     $restore_btn = $('<button class="btn-restore">&#x2197; restore</button>');
 
