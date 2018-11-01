@@ -30,6 +30,8 @@ ul.task-list-archive li.task .details .btn-restore {
     background: none;
     color: #fff;
     outline: none; }
+  .task-form .priority-colors span {
+    font-size: 44px; }
   .task-form .btn-submit-task {
     margin-top: 10px;
     background: #fff;
@@ -129,13 +131,18 @@ ul.task-list-archive {
       ul.task-list-archive li.task:hover .btn-restore {
         opacity: 1; }
 
-ul.task-list-archive .task {
-  padding: 0 20px !important;
-  opacity: 0.2; }
-  ul.task-list-archive .task:hover {
-    opacity: 1; }
+ul.task-list-archive {
+  margin-top: 10px; }
+  ul.task-list-archive .task {
+    padding: 0 20px !important;
+    opacity: 0.2; }
+    ul.task-list-archive .task:hover {
+      opacity: 1; }
 
 .btn-clear-tasks, .btn-clear-archive {
+  display: none;
   background: none; }
+  .btn-clear-tasks.active, .btn-clear-archive.active {
+    display: inline-block; }
 
 /*# sourceMappingURL=style.css.map */

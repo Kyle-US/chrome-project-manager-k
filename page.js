@@ -24,6 +24,8 @@
                 storage.get(['tasks'],function(result){console.log(result)
 
                     $('ul.task-list,ul.task-list-archive').empty();
+                    $('.btn-clear-archive').removeClass('active');
+                    $('.btn-clear-tasks').removeClass('active');
 
                     if(result.tasks.length){
 
@@ -86,6 +88,7 @@
                                     $task = $li.append($priority,$task_details);
 
                                     $('ul.task-list').append($task)
+                                    $('.btn-clear-tasks').addClass('active');
                                 }
                                 else{
                                     // Archived tasks
@@ -101,6 +104,7 @@
                                     $task = $li.append($task_details);
 
                                     $('ul.task-list-archive').append($task)
+                                    $('.btn-clear-archive').addClass('active');
                                 }
                             });
 
@@ -259,5 +263,5 @@
                 }
             })
 
-    })
+    });
 }(jQuery));
