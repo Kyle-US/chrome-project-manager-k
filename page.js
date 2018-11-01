@@ -1,6 +1,9 @@
 (function($){
     $(document).ready(function(){
 
+        // var img = 'https://www.unitedstudios.co.uk/wp-content/uploads/2018/08/carnedward-social.jpg';
+        // $('body').css('background-image','url('+img+')');
+
 
         // Setup Tasks Storage
 
@@ -21,13 +24,16 @@
 
             function refresh_tasks_list(){
 
-                storage.get(['tasks'],function(result){console.log(result)
+                storage.get(['tasks'],function(result){
 
                     $('ul.task-list,ul.task-list-archive').empty();
                     $('.btn-clear-archive').removeClass('active');
                     $('.btn-clear-tasks').removeClass('active');
+                    $('.btn-download-json').removeClass('active');
 
                     if(result.tasks.length){
+
+                        $('.btn-download-json').addClass('active');
 
                         // reorder by priority
 
@@ -262,6 +268,35 @@
                     clearArchiveList()
                 }
             })
+
+
+        // export file
+
+            function download(data, filename, type) {
+                var file = new Blob([data], {type: type});
+                if (window.navigator.msSaveOrOpenBlob) // IE10+
+                    window.navigator.msSaveOrOpenBlob(file, filename);
+                else { // Others
+                    var a = document.createElement("a"),
+                        url = URL.createObjectURL(file);
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    setTimeout(function() {
+                        document.body.removeChild(a);
+                        window.URL.revokeObjectURL(url);
+                    }, 0);
+                }
+            }
+
+            $('.btn-download-json').on('click',function(){
+
+            storage.get(['tasks'],function(result){
+                download(JSON.stringify(result,null,2),'task-manager-export('+new Date().valueOf()+').json','json');
+            });
+
+        })
 
     });
 }(jQuery));

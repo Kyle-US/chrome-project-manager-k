@@ -12,6 +12,9 @@ ul.task-list-archive li.task .details .btn-restore {
 .btn-clear-archive {
   color: #ff7600; }
 
+.btn-download-json {
+  color: #0093ff; }
+
 .btn-add-task {
   background: #fff;
   padding: 12px 30px;
@@ -139,10 +142,10 @@ ul.task-list-archive {
     ul.task-list-archive .task:hover {
       opacity: 1; }
 
-.btn-clear-tasks, .btn-clear-archive {
+.btn-clear-tasks, .btn-clear-archive, .btn-download-json {
   display: none;
   background: none; }
-  .btn-clear-tasks.active, .btn-clear-archive.active {
+  .btn-clear-tasks.active, .btn-clear-archive.active, .btn-download-json.active {
     display: inline-block; }
 
 /*# sourceMappingURL=style.css.map */
