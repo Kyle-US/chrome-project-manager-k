@@ -23,7 +23,7 @@
 
                 storage.get(['tasks'],function(result){
 
-                    $('ul.task-list').empty();
+                    $('ul.task-list,ul.task-list-archive').empty();
 
                     if(result.tasks.length){
 
@@ -45,49 +45,93 @@
 
                         var tasks = ordered_tasks_arr;
 
+                        // update tasks
 
-                        // reorder by priority
+                        storage.set({'tasks':tasks},function(){
 
-                            var i=0;
-                            tasks.forEach(function(task,ind){ i++;
+                        // create the task html
 
-                                var $li = $('<li class="task" data-index="'+ind+'"></li>');
-                                var $priority = $('<div class="priority priority-'+task.priority+'"></div>');
-                                var $name = $('<div class="name">'+task.name+'</div>');
-                                var $deadline = task.deadline === 'unset' ? $('') : $('<div class="deadline">Due: '+task.deadline+'</div>');
-                                var $delete_btn = $('<button class="btn-remove">delete</button>');
+                            var $task,
+                                $li,
+                                $name,
+                                $priority,
+                                $deadline,
+                                $delete_btn,
+                                $archive_btn,
+                                $colors,
+                                $task_details,
+                                $restore_btn,
+                                i = 0;
 
-                                var $colors;
-                                var c = 5;
-                                $colors = '';
-                                while(c){
-                                    $colors += '<label class="color-'+c+'" data-priority="'+c+'"></label>';
-                                    c--;
+                            tasks.forEach(function(task,ind){i++;
+
+                                if(!task.archive){
+                                    // Active tasks
+
+                                    $li = $('<li class="task" data-index="'+ind+'"></li>');
+                                    $priority = $('<div class="priority priority-'+task.priority+'"></div>');
+                                    $name = $('<div class="name">'+task.name+'</div>');
+                                    $deadline = task.deadline === 'unset' ? $('') : $('<div class="deadline">Due: '+task.deadline+'</div>');
+                                    $delete_btn = $('<button class="btn-remove">&#x2718; delete</button>');
+                                    $archive_btn = $('<button class="btn-archive">&#10004; complete</button>');
+
+                                    var c = 5;
+                                    $colors = '';
+                                    while(c){
+                                        $colors += '<label class="color-'+c+'" data-priority="'+c+'"></label>';
+                                        c--;
+                                    }
+                                    $priority_colors = $('<div class="priority-colors">'+$colors+'</div>').clone();
+
+                                    $task_details = $('<div class="details"></div>');
+                                    $task_details.append($name,$deadline,$priority_colors,$delete_btn,$archive_btn);
+
+                                    $task = $li.append($priority,$task_details);
+
+                                    $('ul.task-list').append($task)
                                 }
+                                else{
+                                    // Archived tasks
 
-                                $priority_colors = $('<div class="priority-colors">'+$colors+'</div>').clone();
+                                    $li = $('<li class="task archived" data-index="'+ind+'"></li>');
+                                    $name = $('<div class="name">'+task.name+' &#10004;</div>');
+                                    $delete_btn = $('<button class="btn-remove">&#x2718; delete</button>');
+                                    $restore_btn = $('<button class="btn-restore">&#x2197; restore</button>');
 
-                                var $task_details = $('<div class="details"></div>');
-                                $task_details.append($name,$deadline,$priority_colors,$delete_btn);
+                                    $task_details = $('<div class="details"></div>');
+                                    $task_details.append($name,$delete_btn,$restore_btn);
 
-                                var $task = $li.append($priority,$task_details);
+                                    $task = $li.append($task_details);
 
-                                $('ul.task-list').append($task)
+                                    $('ul.task-list-archive').append($task)
+                                }
                             });
-                            $('ul.task-list .btn-remove').off().on('click',function(){
+
+                            $('ul.task-list .priority-colors label').off().on('click',function(){
+
+                            var task_index = $(this).closest('.task').attr('data-index');
+                            var priority = $(this).attr('data-priority');
+                            updateTask(task_index,'priority',priority);
+                        })
+
+                            $('ul.task-list .btn-remove,ul.task-list-archive .btn-remove').off().on('click',function(){
                                 var r = confirm("Delete this task forever?");
                                 if(r){
                                     var index = parseInt($(this).closest('.task').attr('data-index'));
-                                    removeTask(index);
+                                    deleteTask(index);
                                 }
                             });
-                            $('ul.task-list .priority-colors label').off().on('click',function(){
 
-                                var task_index = $(this).closest('.task').attr('data-index');
-                                var priority = $(this).attr('data-priority');
-                                update_task(task_index,'priority',priority);
-                            })
+                            $('ul.task-list .btn-archive').off().on('click',function(){
+                                var index = parseInt($(this).closest('.task').attr('data-index'));
+                                updateTask(index,'archive',true);
+                            });
 
+                            $('ul.task-list-archive .btn-restore').off().on('click',function(){
+                                var index = parseInt($(this).closest('.task').attr('data-index'));
+                                updateTask(index,'archive',false);
+                            });
+                        });
                     }
                 });
             }
@@ -106,15 +150,13 @@
             };
 
 
-        // update
+        // update task
 
-            function update_task(ind,key,val){
+            function updateTask(ind,key,val){
 
                 storage.get(['tasks'],function(result){
 
                     result.tasks[ind][key] = val;
-
-                    console.log(result);
 
                     storage.set({'tasks':result.tasks},function(){
                         refresh_tasks_list();
@@ -150,6 +192,7 @@
                 ){
                     $(this).removeClass('active');
                     setTask({
+                        archive: false,
                         name: name,
                         deadline: deadline,
                         priority: priority
@@ -158,9 +201,9 @@
             });
 
 
-        // Remove Task
+        // Delete Task
 
-            function removeTask(index){
+            function deleteTask(index){
                 storage.get(['tasks'],function(result){
                     result.tasks.splice(index,1);
                     storage.set({'tasks':result.tasks},function(){
@@ -192,7 +235,6 @@
                     clearTaskList()
                 }
             })
-
 
     })
 }(jQuery));

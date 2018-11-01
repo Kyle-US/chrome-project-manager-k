@@ -1,5 +1,7 @@
 
 $red: #ff4242;
+$green: #00db03;
+$orange: #ff7600;
 
 .ease{
   transition: all 300ms ease;
@@ -43,7 +45,8 @@ $red: #ff4242;
   }
 }
 
-ul.task-list{
+ul.task-list,
+ul.task-list-archive{
   margin: 0;
   padding: 0;
 
@@ -105,6 +108,22 @@ ul.task-list{
         @extend .ease;
         opacity: 0;
       }
+
+      .btn-archive{
+        display: inline-block;
+        color: $green;
+        background: none;
+        @extend .ease;
+        opacity: 0;
+      }
+
+      .btn-restore{
+        display: inline-block;
+        color: $orange;
+        background: none;
+        @extend .ease;
+        opacity: 0;
+      }
     }
 
     &:hover{
@@ -113,10 +132,26 @@ ul.task-list{
       .priority-colors{
         opacity: 1;
       }
-
       .btn-remove{
         opacity: 1;
       }
+      .btn-archive{
+        opacity: 1;
+      }
+      .btn-restore{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+ul.task-list-archive{
+
+  .task{
+    opacity: 0.2;
+
+    &:hover{
+      opacity: 1;
     }
   }
 }
