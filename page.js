@@ -172,7 +172,7 @@
         // Show 'New Task' Form
 
             $('.btn-add-task').on('click',function(){
-                $('.task-form').addClass('active')
+                $('.task-form').toggleClass('active')
                 $('.task-form').find('[name=name]').focus();
             });
 
