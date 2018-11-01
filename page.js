@@ -58,11 +58,12 @@
                                 var $delete_btn = $('<button class="btn-remove">delete</button>');
 
                                 var $colors;
-                                $colors = '<label class="color-1" data-priority="1"></label>';
-                                $colors += '<label class="color-2" data-priority="2"></label>';
-                                $colors += '<label class="color-3" data-priority="3"></label>';
-                                $colors += '<label class="color-4" data-priority="4"></label>';
-                                $colors += '<label class="color-5" data-priority="5"></label>';
+                                var c = 5;
+                                $colors = '';
+                                while(c){
+                                    $colors += '<label class="color-'+c+'" data-priority="'+c+'"></label>';
+                                    c--;
+                                }
 
                                 $priority_colors = $('<div class="priority-colors">'+$colors+'</div>').clone();
 
