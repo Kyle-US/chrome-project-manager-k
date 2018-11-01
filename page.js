@@ -21,7 +21,7 @@
 
             function refresh_tasks_list(){
 
-                storage.get(['tasks'],function(result){
+                storage.get(['tasks'],function(result){console.log(result)
 
                     $('ul.task-list,ul.task-list-archive').empty();
 
@@ -180,8 +180,7 @@
 
                 $name.val('');
                 $deadline.val('');
-                $priority.val('');
-                console.log(priority)
+
                 if(
                         name.length
                     &&  deadline.length
@@ -225,11 +224,38 @@
                     refresh_tasks_list();
                 });
             }
-
             $('.btn-clear-tasks').on('click',function(){
                 var r = confirm("Delete all tasks forever?");
                 if(r){
                     clearTaskList()
+                }
+            })
+
+
+        // Clear archive list
+
+            function clearArchiveList(){
+
+                storage.get(['tasks'],function(result){
+
+                    var new_tasks = [];
+
+                    result.tasks.forEach(function(task,index){
+                        if(!task.archive){
+                            new_tasks.push(task)
+                        }
+                    });
+
+                    storage.set({'tasks':new_tasks},function(){
+                        refresh_tasks_list()
+                    });
+                });
+            }
+
+            $('.btn-clear-archive').on('click',function(){
+                var r = confirm("Delete all archived tasks?");
+                if(r){
+                    clearArchiveList()
                 }
             })
 

@@ -9,6 +9,9 @@ ul.task-list-archive li.task .details .btn-restore {
 .btn-clear-tasks {
   color: #ff4242; }
 
+.btn-clear-archive {
+  color: #ff7600; }
+
 .btn-add-task {
   background: #fff;
   padding: 12px 30px;
@@ -127,11 +130,12 @@ ul.task-list-archive {
         opacity: 1; }
 
 ul.task-list-archive .task {
+  padding: 0 20px !important;
   opacity: 0.2; }
   ul.task-list-archive .task:hover {
     opacity: 1; }
 
-.btn-clear-tasks {
+.btn-clear-tasks, .btn-clear-archive {
   background: none; }
 
 /*# sourceMappingURL=style.css.map */

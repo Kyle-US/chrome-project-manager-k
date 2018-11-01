@@ -10,6 +10,9 @@ $orange: #ff7600;
 .btn-clear-tasks{
   color: $red;
 }
+.btn-clear-archive{
+  color: $orange;
+}
 
 .btn-add-task{
   background: #fff;
@@ -148,6 +151,7 @@ ul.task-list-archive{
 ul.task-list-archive{
 
   .task{
+    padding: 0 20px!important;
     opacity: 0.2;
 
     &:hover{
@@ -156,6 +160,6 @@ ul.task-list-archive{
   }
 }
 
-.btn-clear-tasks{
+.btn-clear-tasks,.btn-clear-archive{
   background: none;
 }
