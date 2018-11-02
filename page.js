@@ -33,26 +33,26 @@
 
                     if(result.tasks.length){
 
-                        $('.btn-download-json').addClass('active');
+                            $('.btn-download-json').addClass('active');
 
                         // reorder by priority
 
-                        var priorities = [5,4,3,2,1];
-                        var ordered_tasks_arr = [];
+                            var priorities = [5,4,3,2,1];
+                            var ordered_tasks_arr = [];
 
-                        priorities.forEach(function(p){
-                            result.tasks.forEach(function(task,ind){
-                                if(p == task.priority){
-                                    ordered_tasks_arr.push(task);
-                                }
-                            })
-                        });
+                            priorities.forEach(function(p){
+                                result.tasks.forEach(function(task,ind){
+                                    if(p == task.priority){
+                                        ordered_tasks_arr.push(task);
+                                    }
+                                })
+                            });
 
-                        var tasks = ordered_tasks_arr;
+                            var tasks = ordered_tasks_arr;
 
                         // update tasks
 
-                        storage.set({'tasks':tasks},function(){
+                            storage.set({'tasks':tasks},function(){
 
                         // create the task html
 
@@ -75,7 +75,7 @@
 
                                     $li = $('<li class="task" data-index="'+ind+'"></li>');
                                     $priority = $('<div class="priority priority-'+task.priority+'"></div>');
-                                    $name = $('<div class="name">'+task.name+'</div>');
+                                    $name = $('<div class="name">'+task.name+'</div><button class="btn-save-text">save</button>');
                                     $deadline = task.deadline === 'unset' ? $('') : $('<div class="deadline">Due: '+task.deadline+'</div>');
                                     $delete_btn = $('<button class="btn-remove">&#x2718; delete</button>');
                                     $archive_btn = $('<button class="btn-archive">&#10004; complete</button>');
@@ -138,6 +138,11 @@
                                 var index = parseInt($(this).closest('.task').attr('data-index'));
                                 updateTask(index,'archive',false);
                             });
+
+                            $('ul.task-list .task .name').on('click',function(){
+                                editTaskText($(this));
+                            });
+
                         });
                     }
                 });
@@ -157,7 +162,7 @@
             };
 
 
-        // update task
+        // Update task
 
             function updateTask(ind,key,val){
 
@@ -216,6 +221,20 @@
                         refresh_tasks_list();
                     });
                 });
+            }
+
+
+        // Edit task text
+
+            function editTaskText($task_name){
+
+                $('ul.task-list .task .name').off().not($task_name).attr('contenteditable',false);
+                $task_name.attr('contenteditable',true);
+
+                $task_name.next('.btn-save-text').on('click',function(){
+                    var ind = $(this).closest('.task').attr('data-index');
+                    updateTask(ind,'name',$task_name.text())
+                })
             }
 
 
