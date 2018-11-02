@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f97a5b50-0175-458b-bf26-caebed936670" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
-      <change beforePath="$PROJECT_DIR$/style.css.map" afterPath="$PROJECT_DIR$/style.css.map" />
-      <change beforePath="$PROJECT_DIR$/style.scss" afterPath="$PROJECT_DIR$/style.scss" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -105,11 +103,6 @@
                 <element signature="e#10675#10733#0" expanded="false" />
                 <element signature="e#11370#11504#0" expanded="true" />
                 <element signature="e#11653#11785#0" expanded="true" />
-                <marker date="1541151811945" expanded="true" signature="3083:3091" ph="..." />
-                <marker date="1541151811945" expanded="true" signature="3193:3201" ph="..." />
-                <marker date="1541151811945" expanded="true" signature="4404:4412" ph="..." />
-                <marker date="1541151811945" expanded="true" signature="4516:4524" ph="..." />
-                <marker date="1541151811945" expanded="true" signature="4626:4634" ph="..." />
               </folding>
             </state>
           </provider>
@@ -230,12 +223,12 @@
       <workItem from="1540892578037" duration="21450000" />
       <workItem from="1540976097565" duration="23858000" />
       <workItem from="1541062579579" duration="19058000" />
-      <workItem from="1541147603826" duration="4563000" />
+      <workItem from="1541147603826" duration="4723000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68929000" />
+    <option name="totallyTimeSpent" value="69089000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -350,11 +343,6 @@
             <element signature="e#10675#10733#0" expanded="false" />
             <element signature="e#11370#11504#0" expanded="true" />
             <element signature="e#11653#11785#0" expanded="true" />
-            <marker date="1541151811945" expanded="true" signature="3083:3091" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="3193:3201" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="4404:4412" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="4516:4524" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="4626:4634" ph="..." />
           </folding>
         </state>
       </provider>
@@ -450,11 +438,6 @@
             <element signature="e#10675#10733#0" expanded="false" />
             <element signature="e#11370#11504#0" expanded="true" />
             <element signature="e#11653#11785#0" expanded="true" />
-            <marker date="1541151811945" expanded="true" signature="3083:3091" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="3193:3201" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="4404:4412" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="4516:4524" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="4626:4634" ph="..." />
           </folding>
         </state>
       </provider>
@@ -492,11 +475,6 @@
             <element signature="e#10675#10733#0" expanded="false" />
             <element signature="e#11370#11504#0" expanded="true" />
             <element signature="e#11653#11785#0" expanded="true" />
-            <marker date="1541151811945" expanded="true" signature="3083:3091" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="3193:3201" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="4404:4412" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="4516:4524" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="4626:4634" ph="..." />
           </folding>
         </state>
       </provider>
@@ -582,11 +560,6 @@
             <element signature="e#10675#10733#0" expanded="false" />
             <element signature="e#11370#11504#0" expanded="true" />
             <element signature="e#11653#11785#0" expanded="true" />
-            <marker date="1541151811945" expanded="true" signature="3083:3091" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="3193:3201" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="4404:4412" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="4516:4524" ph="..." />
-            <marker date="1541151811945" expanded="true" signature="4626:4634" ph="..." />
           </folding>
         </state>
       </provider>
