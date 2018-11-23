@@ -54,7 +54,7 @@ ul.task-list-archive {
     padding: 10px 20px;
     margin: 6px 0;
     cursor: default;
-    border-radius: 100px; }
+    border-radius: 4px; }
     ul.task-list li.task .priority,
     ul.task-list-archive li.task .priority {
       display: inline-block;

@@ -63,13 +63,14 @@ ul.task-list-archive{
   padding: 0;
 
   li.task{
+
     @extend .ease;
     list-style: none;
     background: #46434a;
     padding: 10px 20px;
     margin: 6px 0;
     cursor: default;
-    border-radius: 100px;
+    border-radius: 4px;
 
     .priority{
       display: inline-block;
