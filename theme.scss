@@ -7,7 +7,17 @@ html{}
 body{
   background: #1d1d1d;
   color: #fff;
+  background-size: cover;
+  margin: 0;
+
+  .overlay{
+    background: rgba(0,0,0,0.5);
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+  }
 }
+
 
 div{
   font-size: 16px;
@@ -29,7 +39,6 @@ button{
   background: #fff;
   outline: none;
 }
-
 
 .priority-colors{
 

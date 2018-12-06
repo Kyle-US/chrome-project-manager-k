@@ -1,8 +1,8 @@
 (function($){
     $(document).ready(function(){
 
-        // var img = 'https://www.unitedstudios.co.uk/wp-content/uploads/2018/08/carnedward-social.jpg';
-        // $('body').css('background-image','url('+img+')');
+        var img = 'https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80';
+        $('body').css('background-image','url('+img+')');
 
 
         // Setup Tasks Storage
@@ -316,6 +316,12 @@
             });
 
         })
+
+
+        // Footer
+
+            var year = (new Date()).getFullYear();
+            $('footer').html('Copyright '+year+' - <a target="_blank" href="https://unitedstudios.co.uk">United Studios</a>');
 
     });
 }(jQuery));

@@ -11,43 +11,48 @@
 
 </head>
 <body>
+<div class="overlay">
+    <section class="project-manager-k">
 
-<section>
-    <div class="container">
+        <div class="container">
 
-        <button class="btn-add-task">&#x2b; new task</button>
+            <button class="btn-add-task">&#x2b; new task</button>
 
-        <form class="task-form">
+            <form class="task-form">
 
-            <label>Task Name</label>
-            <input name="name" type="text"><br>
+                <label>Task Name</label>
+                <input name="name" type="text"><br>
 
-            <label>Due <small>(optional)</small>:</label>
-            <input name="deadline" type="date"><br>
+                <label>Due <small>(optional)</small>:</label>
+                <input name="deadline" type="date"><br>
 
-            <label>Priority:</label>
-            <div class="priority-colors">
-                <span class="icon">&#x21e7;</span>
-                <input id="priority_5" type="radio" name="priority" value="5"><label class="color-5" for="priority_5" title="Crutial"></label>
-                <input id="priority_4" type="radio" name="priority" value="4"><label class="color-4" for="priority_4" title="High Priority"></label>
-                <input id="priority_3" type="radio" name="priority" value="3" checked><label class="color-3" for="priority_3" title="Medium Priority"></label>
-                <input id="priority_2" type="radio" name="priority" value="2"><label class="color-2" for="priority_2" title="Low Priority"></label>
-                <input id="priority_1" type="radio" name="priority" value="1"><label class="color-1" for="priority_1" title="Meh"></label>
-                <span class="icon">&#x21e9;</span>
+                <label>Priority:</label>
+                <div class="priority-colors">
+                    <span class="icon">&#x21e7;</span>
+                    <input id="priority_5" type="radio" name="priority" value="5"><label class="color-5" for="priority_5" title="Crutial"></label>
+                    <input id="priority_4" type="radio" name="priority" value="4"><label class="color-4" for="priority_4" title="High Priority"></label>
+                    <input id="priority_3" type="radio" name="priority" value="3" checked><label class="color-3" for="priority_3" title="Medium Priority"></label>
+                    <input id="priority_2" type="radio" name="priority" value="2"><label class="color-2" for="priority_2" title="Low Priority"></label>
+                    <input id="priority_1" type="radio" name="priority" value="1"><label class="color-1" for="priority_1" title="Meh"></label>
+                    <span class="icon">&#x21e9;</span>
+                </div>
+
+                <button type="submit" class="btn-submit-task">Save</button>
+
+            </form>
+
+            <div class="list-options">
+                <button class="btn-clear-tasks">&#x2718; delete all</button>
+                <button class="btn-clear-archive">&#x2718; clear archive</button>
+                <button class="btn-download-json">&#x27AF; export</button>
             </div>
 
-            <button type="submit" class="btn-submit-task">Save</button>
+            <ul class="task-list"></ul>
+            <ul class="task-list-archive"></ul>
 
-        </form>
-
-        <ul class="task-list"></ul>
-        <ul class="task-list-archive"></ul>
-
-        <button class="btn-clear-tasks">&#x2718; delete all</button>
-        <button class="btn-clear-archive">&#x2718; clear archive</button>
-        <button class="btn-download-json">&#x27AF; export</button>
-
-    </div>
-</section>
+        </div>
+        <footer></footer>
+    </section>
+</div>
 </body>
 </html>
