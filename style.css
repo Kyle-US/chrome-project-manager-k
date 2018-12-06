@@ -14,6 +14,9 @@
   border-radius: 50px; }
 
 .list-options {
+  background-color: rgba(0, 0, 0, 0.59);
+  padding: 10px;
+  border-radius: 5px;
   display: inline-block;
   float: right; }
   .list-options .btn-clear-tasks {
@@ -22,6 +25,10 @@
     color: #ff7600; }
   .list-options .btn-download-json {
     color: #0093ff; }
+  .list-options .btn-toggle-img-url {
+    color: #00db03; }
+  .list-options input.bg_img {
+    display: none; }
 
 .task-form {
   display: none;
@@ -140,10 +147,10 @@ ul.task-list-archive {
     ul.task-list-archive .task:hover {
       opacity: 1; }
 
-.btn-clear-tasks, .btn-clear-archive, .btn-download-json {
+.btn-clear-tasks, .btn-clear-archive, .btn-download-json, .btn-toggle-img-url {
   display: none;
   background: none; }
-  .btn-clear-tasks.active, .btn-clear-archive.active, .btn-download-json.active {
+  .btn-clear-tasks.active, .btn-clear-archive.active, .btn-download-json.active, .btn-toggle-img-url.active {
     display: inline-block; }
 
 footer {

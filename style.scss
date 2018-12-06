@@ -9,9 +9,6 @@ $blue: #0093ff;
   text-align: left;
   width: 100%;
   max-width: 1000px;
-  @media screen and (max-width: 767px){
-
-  }
 }
 
 .ease{
@@ -26,6 +23,9 @@ $blue: #0093ff;
 }
 
 .list-options{
+  background-color: rgba(0, 0, 0, 0.59);
+  padding: 10px;
+  border-radius: 5px;
   display: inline-block;
   float: right;
 
@@ -38,6 +38,14 @@ $blue: #0093ff;
   .btn-download-json{
     color: $blue;
   }
+  .btn-toggle-img-url{
+    color: $green;
+  }
+
+  input.bg_img{
+    display: none;
+  }
+
 }
 
 .task-form{
@@ -216,7 +224,7 @@ ul.task-list-archive{
   }
 }
 
-.btn-clear-tasks,.btn-clear-archive,.btn-download-json{
+.btn-clear-tasks,.btn-clear-archive,.btn-download-json,.btn-toggle-img-url{
   display: none;
   background: none;
 

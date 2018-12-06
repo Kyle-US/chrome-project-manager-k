@@ -1,13 +1,22 @@
 (function($){
     $(document).ready(function(){
 
-        var img = 'https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80';
-        $('body').css('background-image','url('+img+')');
+            var storage = chrome.storage.sync;
+
+            storage.get(['bg_img'],function(result){
+                if(result.bg_img){
+                    $('body').css('background-image','url('+result.bg_img+')');
+                }
+               else{
+                    var img = 'https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80';
+                    $('body').css('background-image','url('+img+')');
+                }
+            });
 
 
         // Setup Tasks Storage
 
-            var storage = chrome.storage.sync;
+
 
             storage.get(['tasks'],function(result){
                 if($.isEmptyObject(result)){
@@ -316,6 +325,22 @@
             });
 
         })
+
+
+        // export file
+
+            $('.btn-toggle-img-url').off().on('click',function(){
+                $('.bg_img').toggle();
+            });
+
+            $('.bg_img').off().on('change keyup click',function(){
+
+                var img_url = $(this).val();
+
+                $('body').css('background-image','url('+img_url+')');
+
+                storage.set({'bg_img':img_url});
+            });
 
 
         // Footer
