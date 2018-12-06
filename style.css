@@ -154,7 +154,8 @@ ul.task-list-archive {
     display: inline-block; }
 
 footer {
-  text-align: right; }
+  text-align: right;
+  opacity: 0.6; }
   footer a {
     color: #fff; }
 

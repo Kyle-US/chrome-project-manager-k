@@ -2,6 +2,8 @@
   box-sizing: border-box; }
 
 body {
+  position: relative;
+  display: block;
   background: #1d1d1d;
   color: #fff;
   background-size: cover;
@@ -9,13 +11,22 @@ body {
   background-position: center;
   margin: 0; }
   body .overlay {
+    display: block;
+    float: left;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     margin: 0;
     padding: 10px;
     text-align: center; }
 
 div {
-  font-size: 16px; }
+  font-size: 16px;
+  display: inline-block; }
 
 h1 {
   font-size: 60px; }

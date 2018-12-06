@@ -5,6 +5,8 @@
 html{}
 
 body{
+  position: relative;
+  display: block;
   background: #1d1d1d;
   color: #fff;
   background-size: cover;
@@ -13,6 +15,11 @@ body{
   margin: 0;
 
   .overlay{
+    display: block;
+    float: left;
+    top:0;bottom:0;right:0;left:0;
+    width: 100%;
+    min-height: 100vh;
     background: rgba(0,0,0,0.5);
     margin: 0;
     padding: 10px;
@@ -24,6 +31,7 @@ body{
 
 div{
   font-size: 16px;
+  display: inline-block;
 }
 
 h1{
