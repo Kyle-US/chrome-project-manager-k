@@ -166,7 +166,7 @@ ul.task-list,ul.task-list-archive{
     }
 
     &:hover{
-      background: #2f2f2f;
+      background: #1a1a1a;
 
       .priority-colors{
         opacity: 1;
@@ -216,7 +216,7 @@ ul.task-list-archive{
 
   .task{
     padding: 0 20px!important;
-    opacity: 0.2;
+    opacity: 0.4;
 
     &:hover{
       opacity: 1;

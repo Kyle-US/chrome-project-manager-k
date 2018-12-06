@@ -5,6 +5,8 @@ body {
   background: #1d1d1d;
   color: #fff;
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   margin: 0; }
   body .overlay {
     background: rgba(0, 0, 0, 0.5);
